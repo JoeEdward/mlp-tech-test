@@ -18,7 +18,9 @@
 <div class="container" id="app">
     <x-header-bar></x-header-bar>
 
-    @yield('content')
+    <div class="mt-5">
+        @yield('content')
+    </div>
 </div>
 
 </body>

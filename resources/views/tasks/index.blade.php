@@ -9,10 +9,15 @@
                 {{session()->get('success')}}
             </div>
         @endif
+        @error('error')
+            <div class="alert alert-danger">
+                {{$message}}
+            </div>
+        @enderror
     </div>
 
     <div class="row">
-        <div class="col-4">
+        <div class="col-lg-4 cols-12 mb-2">
             <form class="d-flex flex-column gap-2" action="{{route('tasks.store')}}" method="post">
                 @csrf
 
@@ -25,7 +30,7 @@
             </form>
         </div>
 
-        <div class="col-8">
+        <div class="col-lg-8 cols-12">
             <div class="card">
                 <div class="card-body">
                     <table class="table">

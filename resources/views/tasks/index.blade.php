@@ -5,8 +5,14 @@
 @section('content')
     <div class="row">
         <div class="col-4">
-            <form class="d-flex flex-column gap-2">
-                <input class="form-control" placeholder="Insert task name">
+            <form class="d-flex flex-column gap-2" action="{{route('tasks.store')}}" method="post">
+                @csrf
+
+                <input value="{{old('name')}}" name="name" class="form-control" placeholder="Insert task name">
+                @error('name')
+                    <small class="text-danger">{{ $message }}</small>
+                @enderror
+
                 <button type="submit" class="btn btn-primary w-100">Add</button>
             </form>
         </div>
